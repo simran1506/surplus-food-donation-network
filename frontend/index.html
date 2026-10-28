@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Share surplus food with people and community organisations nearby.">
+  <title>ShareBite | Surplus Food Donation Network</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="ShareBite home"><span class="brand-mark">♥</span> ShareBite</a>
+    <nav aria-label="Main navigation">
+      <a href="#available">Find food</a>
+      <a href="#donate">Donate food</a>
+      <a href="#how-it-works">How it works</a>
+    </nav>
+    <a class="nav-cta" href="#donate">Share a meal <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> GOOD FOOD. GOOD PEOPLE. LESS WASTE.</p>
+        <h1>Share more.<br><span>Waste less.</span></h1>
+        <p class="hero-description">Connect extra food with people who can use it. A small act of sharing can make a meaningful difference in your community.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#available">Find available food <span aria-hidden="true">→</span></a>
+          <a class="button button-light" href="#donate">Donate surplus food</a>
+        </div>
+        <div class="hero-note"><span class="avatar-stack"><i>✦</i><i>♡</i><i>＋</i></span><span>Every shared meal is a step toward less waste.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of fresh food ready to share">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="food-card food-card-top"><span class="food-emoji">🥕</span><span><b>Fresh produce</b><small>Ready to share</small></span><span class="tiny-heart">♥</span></div>
+        <div class="food-bowl"><div class="bowl-leaf leaf-a"></div><div class="bowl-leaf leaf-b"></div><div class="bowl-leaf leaf-c"></div><div class="bowl-fruit fruit-a"></div><div class="bowl-fruit fruit-b"></div><div class="bowl-fruit fruit-c"></div><div class="bowl-fruit fruit-d"></div><div class="bowl-base"></div></div>
+        <div class="food-card food-card-bottom"><span class="mini-check">✓</span><span><b>A little goes a long way</b><small>Share kindness today</small></span></div>
+        <span class="sparkle sparkle-one">✳</span><span class="sparkle sparkle-two">✦</span>
+      </div>
+    </section>
+
+    <section class="stats-row" aria-label="Network statistics">
+      <div class="stat"><span class="stat-icon">♧</span><div><strong id="available-count">—</strong><span>Available donations</span></div></div>
+      <div class="stat"><span class="stat-icon stat-orange">♡</span><div><strong id="total-count">—</strong><span>Food shares listed</span></div></div>
+      <div class="stat"><span class="stat-icon stat-blue">↗</span><div><strong id="request-count">—</strong><span>Requests made</span></div></div>
+      <p class="stats-message">Together, communities can turn surplus into support.</p>
+    </section>
+
+    <section class="section how-section" id="how-it-works">
+      <div class="section-heading">
+        <p class="eyebrow">A SIMPLE WAY TO MAKE AN IMPACT</p>
+        <h2>Sharing food is <span>easy.</span></h2>
+        <p>Three simple steps can help good food reach someone who needs it.</p>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-number">01</span><div class="step-icon icon-peach">♧</div><h3>List your surplus</h3><p>Have extra food? Add what you can share and where it can be picked up.</p></article>
+        <article class="step-card"><span class="step-number">02</span><div class="step-icon icon-mint">⌕</div><h3>Find a food share</h3><p>Browse available donations and find an option that works for you.</p></article>
+        <article class="step-card"><span class="step-number">03</span><div class="step-icon icon-lilac">♡</div><h3>Connect & collect</h3><p>Send a request and coordinate pickup directly with the donor.</p></article>
+      </div>
+    </section>
+
+    <section class="section listings-section" id="available">
+      <div class="listing-heading">
+        <div><p class="eyebrow">COMMUNITY FOOD BOARD</p><h2>Food ready to <span>share.</span></h2><p class="section-subtitle">Browse the latest donations posted by your community.</p></div>
+        <div class="filter-wrap"><label for="food-filter">Filter by type</label><select id="food-filter"><option value="">All food types</option><option>Cooked Meals</option><option>Fruits &amp; Vegetables</option><option>Bakery</option><option>Packaged Food</option><option>Other</option></select></div>
+      </div>
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <div id="donation-list" class="donation-grid"><div class="loading-card">Loading available food…</div></div>
+    </section>
+
+    <section class="section donate-section" id="donate">
+      <div class="donate-intro"><p class="eyebrow">MAKE SOMEONE'S DAY</p><h2>Your extra can be <span>someone's enough.</span></h2><p>Share details about safe-to-donate surplus food. Please provide accurate pickup information so the recipient can plan ahead.</p><div class="donate-callout"><span>✦</span><p><b>Share responsibly</b><br>Only list food that can be safely donated and collected in time. Mention allergens or storage details in the description.</p></div></div>
+      <form id="donation-form" class="form-card">
+        <div class="form-card-heading"><div><h3>List a food donation</h3><p>Fields marked * are required.</p></div><span class="form-heart">♡</span></div>
+        <div class="form-grid">
+          <div class="field field-full"><label for="food-name">Food name *</label><input id="food-name" name="food_name" required minlength="2" maxlength="100" placeholder="e.g. Vegetable rice meals"></div>
+          <div class="field"><label for="food-type">Food category *</label><select id="food-type" name="food_type" required><option value="">Choose category</option><option>Cooked Meals</option><option>Fruits &amp; Vegetables</option><option>Bakery</option><option>Packaged Food</option><option>Other</option></select></div>
+          <div class="field"><label for="quantity">Quantity *</label><input id="quantity" name="quantity" required maxlength="80" placeholder="e.g. 8 meal boxes"></div>
+          <div class="field field-full"><label for="pickup-location">Pickup location *</label><input id="pickup-location" name="pickup_location" required minlength="3" maxlength="200" placeholder="Area, landmark or pickup point"></div>
+          <div class="field"><label for="donor-name">Your name / organisation *</label><input id="donor-name" name="donor_name" required minlength="2" maxlength="100" placeholder="Name or organisation"></div>
+          <div class="field"><label for="donor-contact">Contact detail *</label><input id="donor-contact" name="donor_contact" required minlength="3" maxlength="100" placeholder="Phone or email"></div>
+          <div class="field field-full"><label for="pickup-by">Please collect by (optional)</label><input id="pickup-by" name="pickup_by" type="datetime-local"></div>
+          <div class="field field-full"><label for="description">Description / allergen notes</label><textarea id="description" name="description" rows="3" maxlength="500" placeholder="Freshly prepared, contains nuts, storage notes…"></textarea></div>
+        </div>
+        <button class="button button-primary submit-button" type="submit">Publish donation <span aria-hidden="true">→</span></button>
+        <p class="form-footnote">Your contact details are shown to visitors in this demo. Use test data while learning.</p>
+      </form>
+    </section>
+
+    <section class="closing-banner"><div class="closing-icon">♡</div><div><h2>Good food deserves a good next chapter.</h2><p>Share what you can. Take what you need. Help your community thrive.</p></div><a class="button button-white" href="#donate">Share food today ↗</a></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="#"><span class="brand-mark">♥</span> ShareBite</a><p>A student project for a kinder, less wasteful community.</p><span>Built with care · Surplus Food Donation Network</span></footer>
+
+  <dialog id="request-dialog" class="request-dialog">
+    <form id="request-form" method="dialog">
+      <button type="button" id="close-dialog" class="dialog-close" aria-label="Close">×</button>
+      <p class="eyebrow">CONNECT WITH A DONOR</p><h2>Request this food</h2><p id="request-food-title" class="dialog-food-title"></p>
+      <input type="hidden" id="request-donation-id" name="donation_id">
+      <div class="field"><label for="requester-name">Your name *</label><input id="requester-name" name="requester_name" required minlength="2" maxlength="100" placeholder="Your name"></div>
+      <div class="field"><label for="requester-contact">Contact detail *</label><input id="requester-contact" name="requester_contact" required minlength="3" maxlength="100" placeholder="Phone or email"></div>
+      <div class="field"><label for="request-message">Message (optional)</label><textarea id="request-message" name="message" rows="3" maxlength="500" placeholder="When can you collect it?"></textarea></div>
+      <button class="button button-primary submit-button" type="submit">Send request →</button>
+      <p class="form-footnote">This demo stores the request; it does not send an email or notification.</p>
+    </form>
+  </dialog>
+ <script src="./js/app.js" defer></script>
+</body>
+</html>
