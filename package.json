@@ -1,18 +1,19 @@
 {
   "name": "surplus-food-donation-network",
   "version": "1.0.0",
-  "description": "A beginner-friendly full-stack surplus food donation network using HTML, CSS, JavaScript, Express, Node.js and Supabase PostgreSQL.",
+  "description": "Full-stack surplus food donation network using HTML, CSS, JavaScript, Express, Node.js and Supabase PostgreSQL.",
   "main": "backend/server.js",
   "scripts": {
     "start": "node backend/server.js",
     "dev": "nodemon backend/server.js",
-    "check": "node --check backend/server.js && node --check backend/routes/donations.js && node --check backend/routes/requests.js && node --check frontend/js/app.js"
+    "check": "node --check backend/server.js && node --check backend/routes/donations.js && node --check backend/lib/supabase.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.6.1",
-    "express": "^5.1.0"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
